@@ -1,7 +1,7 @@
 
 /* "users" table contains all registered user information. Passwords are hashed out. */
 
-CREATE TABLE "users" (
+CREATE TABLE "user" (
 "id" SERIAL PRIMARY KEY,
 "username" VARCHAR(250) NOT NULL,
 "email" VARCHAR(250) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE "users" (
 table through the "user_id" row. */
 
 CREATE TABLE "collections" (
-"collection_id" SERIAL PRIMARY KEY,
+"id" SERIAL PRIMARY KEY,
 "user_id" VARCHAR(250) NOT NULL,
 "item_name" VARCHAR(250) NOT NULL,
 "item_model" VARCHAR(250),

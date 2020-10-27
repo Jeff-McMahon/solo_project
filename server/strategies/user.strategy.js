@@ -42,7 +42,7 @@ passport.use(
   new LocalStrategy((username, password, done) => {
     pool
     // Changed query text from "user" to "users" -- JM 10-27 1119
-      .query('SELECT * FROM "users" WHERE username = $1', [username])
+      .query('SELECT * FROM "user" WHERE username = $1', [username])
       .then((result) => {
         const user = result && result.rows && result.rows[0];
         if (user && encryptLib.comparePassword(password, user.password)) {
