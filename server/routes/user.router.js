@@ -23,7 +23,7 @@ router.post('/register', (req, res, next) => {
   const password = encryptLib.encryptPassword(req.body.password);
 
   // Changed "user" to "users" in query text. JM 10-27 @ 1117
-  const queryText = `INSERT INTO "users" (username, password)
+  const queryText = `INSERT INTO "user" (username, password)
     VALUES ($1, $2) RETURNING id`;
   pool
     .query(queryText, [username, password])
