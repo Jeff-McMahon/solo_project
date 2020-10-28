@@ -2,9 +2,7 @@ const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
 // Step #1: Copied template into new folder 'item.router.js'
-/**
- * GET route template
- */
+
 
 // Router 1: display entire collection of user
 // Router works through Postman - 10.27 1540

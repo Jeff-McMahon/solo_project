@@ -6,9 +6,18 @@ import React from 'react';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const InfoPage = () => (
+  <>
   <div>
-    <p>Info Page</p>
+    <p>New User Page</p>
   </div>
+  <div> 
+    <input type='text' placeholder='Name' />
+    <input type='text' placeholder='Phone #' />
+    <input type='text' placeholder='e-mail address' />
+    <input type='text' placeholder='User Name' />
+    <input type='text' placeholder='password' />
+  </div>
+  </>
 );
 
 // If you needed to add local state or other things,

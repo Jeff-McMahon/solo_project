@@ -8,7 +8,18 @@ import React from 'react';
 const AboutPage = () => (
   <div className="container">
     <div>
-      <p>This about page is for anyone to read!</p>
+      <p>Items Detail Page</p>
+    </div>
+    <div>
+      <p>Image</p>
+      <p>Image Location</p>
+      <p>Name</p>
+      <p>Model #</p>
+      <p>Details</p>
+      <p>Location</p>
+    </div>
+    <div>
+      <p>Button location</p>
     </div>
   </div>
 );

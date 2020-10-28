@@ -8,9 +8,22 @@ class UserPage extends Component {
   render() {
     return (
       <div>
+      <div>
+        <h1>Collection List Page</h1>
+        <p>To be displayed: an image if the item, a details buttton,
+          and then a nav bar on the left and an 'add new piece' buttton
+          on the right.
+        </p>
+      </div>
+      <div></div>
+      <div>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
+      </div>
+      <div>
+
+      </div>
       </div>
     );
   }

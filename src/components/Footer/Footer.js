@@ -6,6 +6,6 @@ import './Footer.css';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
 
-const Footer = () => <footer></footer>;
+const Footer = () => <footer>Footer here - see 'footer.js'</footer>;
 
 export default Footer;
