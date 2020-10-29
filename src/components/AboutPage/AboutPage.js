@@ -1,36 +1,30 @@
+
 import React, { Component } from "react";
-import { connect } from 'react-redux'; 
+import { connect } from "react-redux";
+
 
 class AboutPage extends Component {
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_ITEMS" });
-  }
+  };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="container">
-        <div>
-          <p>Items Detail Page</p>
-        </div>
-        <div>
-          <p>Image</p>
-          <p>Image Location</p>
-          <p>Name</p>
-          <p>Model #</p>
-          <p>Details</p>
-          <p>Location</p>
-        </div>
-        <div>
-          <p>Button location</p>
-        </div>
+        <ul>
+          {this.props.items.map((item) => {
+            console.log('current item is', item);
+            return <li>{JSON.stringify(item)}<img src={`/media/${item.item_image}`}/></li>
+          })}
+        </ul>
       </div>
     );
   }
 }
 
 const mapReduxStateToProps = (reduxState) => ({
-  reduxState
+  items: reduxState.item,
 });
 
 export default connect(mapReduxStateToProps)(AboutPage);
