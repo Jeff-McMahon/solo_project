@@ -1,38 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
+class InfoPage extends React.Component {
 
-const InfoPage = () => (
+
+  render () {
+    return (
   <>
   <div>
     <p>New item page! Please enter in a new item to your collection.</p>
   </div>
   <div> 
-    <input type='text' placeholder='Name' />
-    <input type='text' placeholder='Phone #' />
-    <input type='text' placeholder='e-mail address' />
-    <input type='text' placeholder='User Name' />
-    <input type='text' placeholder='password' />
+    <input type='text' placeholder='Item Name' />
+    <input type='text' placeholder='Item Model' />
+    <input type='text' placeholder='Item Detail' />
+    <input type='text' placeholder='Item Location' />
+    <input type='text' placeholder='Item Image' />
+    <input type='text' placeholder='Item Price' />
+    <button>submit</button>
   </div>
-  </>
-);
+  </>)
+  };
 
-// If you needed to add local state or other things,
-// you can make it a class component like:
 
-/*
-class InfoPage extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <p>Info Page</p>
-      </div>
-    )
-  }
 }
-*/
-export default InfoPage;
+
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
+});
+
+
+export default connect(mapReduxStateToProps)(InfoPage);

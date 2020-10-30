@@ -9,18 +9,30 @@ class CollectionPage extends Component {
       componentDidMount = () => {
         this.props.dispatch({ type: "FETCH_ITEMS" });
       };
+
+      removeItem = (ids) => {
+        console.log('In Delete', ids)
+        this.props.dispatch({
+          type: "LOOSE_ITEMS",
+          payload: ids,
+        });
+      };
     
       render() {
-        console.log(this.props);
+        console.log(this.props.id);
         return (
           <div className="container">
             <h1>Item Collection Page</h1>
             <ul>
               {this.props.items.map((item) => {
-                console.log('current item is', item);
-                return <div><img src={`/media/${item.item_image}`} />
-                <button>Details</button>
-                </div>
+                console.log('current item is', (item.id));
+                return (
+                <div>
+                  <li>
+                    <img src={`/media/${item.item_image}`} />
+                    <button onClick={() => this.removeItem(item.id)}>Delete</button>
+                  </li>
+                </div>)
               })}
             </ul>
           </div>

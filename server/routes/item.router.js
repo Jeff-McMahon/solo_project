@@ -21,11 +21,15 @@ router.get("/", (req, res) => {
 
 // Router 2: Delete an item in the user's collection
 
-router.delete("/delete", (req, res) => {
-  //const thisUser = req.body.id
-  const queryText = `DELETE FROM "collections" WHERE "item_name" = 'GB008'`;
+// TODO: Add /:id to this URL to populate req.params
+router.delete("/delete/:id", (req, res) => {
+  console.log(req);
+  console.log(req.params); // { id: 11 }
+  let reqId = req.params.id;
+
+  const queryText = `DELETE FROM "collections" WHERE "id" = ($1)`;
   pool
-    .query(queryText)
+    .query(queryText, [reqId]) // add something here for your $1 to have
     .then((result) => res.sendStatus(200))
     .catch((err) => {
       console.log(err);
@@ -36,10 +40,11 @@ router.delete("/delete", (req, res) => {
 // Router #3: Adding an item to the user's collection
 
 router.post("/add", (req, res) => {
-    //const thisUser = req.body.id
-    const queryText = `INSERT INTO "collections" ("user_id","item_name","item_model","item_detail","item_location","item_image","item_price","list_master","list_forsale","list_wish") VALUES (2, 'Louis Tully', 'GB008', 'null', 'box', 'gb008.png', '8.88', true, true, false);`;
+    console.log('in Insert router')
+    const queryText = `INSERT INTO "collections" ("user_id","item_name","item_model","item_detail","item_location","item_image","item_price","list_master","list_forsale","list_wish") 
+                        VALUES ($1, $2, $3, $4, $5, $6, $7, true, true, true);`;
     pool
-      .query(queryText)
+      .query(queryText) // TODO: Add your values array here
       .then((result) => res.sendStatus(200))
       .catch((err) => {
         console.log(err);
