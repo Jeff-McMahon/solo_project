@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   //const thisUser = req.body.id
-  const queryText = `SELECT * FROM "collections" WHERE "user_id" = '2' AND "list_master" = true`;
+  const queryText = `SELECT * FROM "collections" WHERE "user_id" = '1' AND "list_master" = true`;
   pool
     .query(queryText)
     .then((result) => res.send(result.rows))

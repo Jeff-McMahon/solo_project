@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 
-class AboutPage extends Component {
+class ItemDisplayPage extends Component {
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_ITEMS" });
   };
@@ -15,7 +15,11 @@ class AboutPage extends Component {
         <ul>
           {this.props.items.map((item) => {
             console.log('current item is', item);
-            return <li>{JSON.stringify(item)}<img src={`/media/${item.item_image}`}/></li>
+            return <div><img src={`/media/${item.item_image}`} />
+            <li>{item.item_name}</li>
+            <li>{item.item_model}</li>
+            <li>{item.item_detail}</li>
+            </div>
           })}
         </ul>
       </div>
@@ -27,4 +31,4 @@ const mapReduxStateToProps = (reduxState) => ({
   items: reduxState.item,
 });
 
-export default connect(mapReduxStateToProps)(AboutPage);
+export default connect(mapReduxStateToProps)(ItemDisplayPage);

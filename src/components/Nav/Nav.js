@@ -32,14 +32,14 @@ const Nav = (props) => {
         {props.store.user.id && (
           <>
             <Link className="nav-link" to="/info">
-              Info Page
+              Item Edit Page
             </Link>
             <LogOutButton className="nav-link" />
           </>
         )}
         {/* Always show this link since the about page is not protected */}
         <Link className="nav-link" to="/about">
-          About
+          Item Detail Page
         </Link>
       </div>
     </div>

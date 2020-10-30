@@ -13,8 +13,8 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
+import ItemPage from '../ItemDisplayPage/ItemDisplayPage';
+import CollectionPage from '../CollectionPage/CollectionPage.js';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -41,7 +41,7 @@ class App extends Component {
               // shows AboutPage at all times (logged in or not)
               exact
               path="/about"
-              component={AboutPage}
+              component={ItemPage}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.
@@ -52,7 +52,7 @@ class App extends Component {
               // logged in shows UserPage else shows LoginPage
               exact
               path="/user"
-              component={UserPage}
+              component={CollectionPage}
             />
 
             <ProtectedRoute
