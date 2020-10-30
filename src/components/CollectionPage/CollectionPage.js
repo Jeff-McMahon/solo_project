@@ -14,6 +14,7 @@ class CollectionPage extends Component {
         console.log(this.props);
         return (
           <div className="container">
+            <h1>Item Collection Page</h1>
             <ul>
               {this.props.items.map((item) => {
                 console.log('current item is', item);

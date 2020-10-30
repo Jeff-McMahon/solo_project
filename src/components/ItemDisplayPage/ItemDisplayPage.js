@@ -19,6 +19,7 @@ class ItemDisplayPage extends Component {
             <li>{item.item_name}</li>
             <li>{item.item_model}</li>
             <li>{item.item_detail}</li>
+            <li>{item.item_location}</li>
             </div>
           })}
         </ul>

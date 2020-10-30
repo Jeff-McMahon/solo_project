@@ -8,10 +8,10 @@ const router = express.Router();
 // Router works through Postman - 10.27 1540
 
 router.get("/", (req, res) => {
-  //const thisUser = req.body.id
-  const queryText = `SELECT * FROM "collections" WHERE "user_id" = '1' AND "list_master" = true`;
+  console.log(req.user.id)
+  const queryText = `SELECT * FROM "collections" WHERE "user_id" = ($1)`;
   pool
-    .query(queryText)
+    .query(queryText, [req.user.id])
     .then((result) => res.send(result.rows))
     .catch((err) => {
       console.log(err);

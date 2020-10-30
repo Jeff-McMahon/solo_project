@@ -8,7 +8,7 @@ import React from 'react';
 const InfoPage = () => (
   <>
   <div>
-    <p>New User Page</p>
+    <p>New item page! Please enter in a new item to your collection.</p>
   </div>
   <div> 
     <input type='text' placeholder='Name' />
