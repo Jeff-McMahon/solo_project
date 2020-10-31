@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   console.log(req.user.id)
-  const queryText = `SELECT * FROM "collections" WHERE "user_id" = ($1)`;
+  const queryText = `SELECT * FROM "collections" WHERE "user_id" = ($1) ORDER BY "item_name" ASC`;
   pool
     .query(queryText, [req.user.id])
     .then((result) => res.send(result.rows))
@@ -21,15 +21,14 @@ router.get("/", (req, res) => {
 
 // Router 2: Delete an item in the user's collection
 
-// TODO: Add /:id to this URL to populate req.params
 router.delete("/delete/:id", (req, res) => {
   console.log(req);
-  console.log(req.params); // { id: 11 }
+  console.log(req.params); 
   let reqId = req.params.id;
 
   const queryText = `DELETE FROM "collections" WHERE "id" = ($1)`;
   pool
-    .query(queryText, [reqId]) // add something here for your $1 to have
+    .query(queryText, [reqId]) 
     .then((result) => res.sendStatus(200))
     .catch((err) => {
       console.log(err);
@@ -41,6 +40,7 @@ router.delete("/delete/:id", (req, res) => {
 
 router.post("/add", (req, res) => {
     console.log('in Insert router')
+    // TODO: Pull your values out of req.body
     const queryText = `INSERT INTO "collections" ("user_id","item_name","item_model","item_detail","item_location","item_image","item_price","list_master","list_forsale","list_wish") 
                         VALUES ($1, $2, $3, $4, $5, $6, $7, true, true, true);`;
     pool

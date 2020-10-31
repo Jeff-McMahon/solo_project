@@ -1,36 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-class InfoPage extends React.Component {
+
+class InfoPage extends Component {
+
+  state = {
+    newItem: {
+      item_name: '',
+      item_model: '',
+      item_detail: '',
+      item_location: '',
+      item_image: '',
+      item_price: '',
+    },
+    localItem: [],
+  };
+
+  handleChange = (event, propName) => {
+    this.setState({ 
+      newItem: {
+        ...this.state.newItem,
+        [propName]: event.target.value,
+      }
+    });
+    console.log('in handleChange');
+  }
 
 
-  render () {
+  handleSubmit = (event) => {
+    console.log('form submitted');
+    this.setState({
+      localItem: [...this.state.localItem, this.state.newItem],
+    })
+    console.log('set state')
+    this.addItem();
+  }
+
+  addItem = (item) => {
+    console.log('In addItems', item)
+    this.props.dispatch({
+      type: "ADD_ITEMS",
+      payload: item,
+    });
+  };
+
+
+  render() {
     return (
-  <>
-  <div>
-    <p>New item page! Please enter in a new item to your collection.</p>
-  </div>
-  <div> 
-    <input type='text' placeholder='Item Name' />
-    <input type='text' placeholder='Item Model' />
-    <input type='text' placeholder='Item Detail' />
-    <input type='text' placeholder='Item Location' />
-    <input type='text' placeholder='Item Image' />
-    <input type='text' placeholder='Item Price' />
-    <button>submit</button>
-  </div>
-  </>)
+      <>
+        <div>
+          <p>New item page! Please enter in a new item to your collection.</p>
+        </div>
+        <div><form onSubmit={this.handleSubmit}>
+          <input type='text' value={this.state.newItem.item_name} onChange={(event) => this.handleChange(event, 'item_name')} placeholder='Item Name' />
+          <input type='text' value={this.state.newItem.item_model} onChange={(event) => this.handleChange(event, 'item_model')} placeholder='Item Model' />
+          <input type='text' value={this.state.newItem.item_detail} onChange={(event) => this.handleChange(event, 'item_detail')} placeholder='Item Detail' />
+          <input type='text' value={this.state.newItem.item_location} onChange={(event) => this.handleChange(event, 'item_location')} placeholder='Item Location' />
+          <input type='text' value={this.state.newItem.item_image} onChange={(event) => this.handleChange(event, 'item_image')} placeholder='Item Image' />
+          <input type='text' value={this.state.newItem.item_price} onChange={(event) => this.handleChange(event, 'item_price')} placeholder='Item Price' />
+          <input type="submit" value="Add Item" />
+        </form>
+        </div>
+        <div>
+          <ul>
+            {this.state.localItem.map(item => <li>adding {item.item_name} to collection</li>)}
+          </ul>
+        </div>
+      </>)
   };
 
 
 }
 
 const mapReduxStateToProps = (reduxState) => ({
-  reduxState,
+  items: reduxState,
 });
 
 
