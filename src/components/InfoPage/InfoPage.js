@@ -5,45 +5,40 @@ import { connect } from 'react-redux';
 class InfoPage extends Component {
 
   state = {
-    newItem: {
-      item_name: '',
-      item_model: '',
-      item_detail: '',
-      item_location: '',
-      item_image: '',
-      item_price: '',
-    },
-    localItem: [],
-  };
+    item_name: '',
+    item_model: '',
+    item_detail: '',
+    item_location: '',
+    item_image: '',
+    item_price: ''
+  }
 
-  handleChange = (event, propName) => {
-    this.setState({ 
-      newItem: {
-        ...this.state.newItem,
-        [propName]: event.target.value,
-      }
+
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
     });
     console.log('in handleChange');
   }
 
 
   handleSubmit = (event) => {
-    console.log('form submitted');
-    this.setState({
-      localItem: [...this.state.localItem, this.state.newItem],
-    })
-    console.log('set state')
-    this.addItem();
-  }
-
-  addItem = (item) => {
-    console.log('In addItems', item)
+    console.log('form submitted')
     this.props.dispatch({
-      type: "ADD_ITEMS",
-      payload: item,
+      type:"ADD_ITEM", 
+      payload: this.state
+    })
+    this.setState({
+      item_name: '',
+      item_model: '',
+      item_detail: '',
+      item_location: '',
+      item_image: '',
+      item_price: ''
     });
-  };
-
+    console.log('set state')
+  }
 
   render() {
     return (
@@ -52,13 +47,13 @@ class InfoPage extends Component {
           <p>New item page! Please enter in a new item to your collection.</p>
         </div>
         <div><form onSubmit={this.handleSubmit}>
-          <input type='text' value={this.state.newItem.item_name} onChange={(event) => this.handleChange(event, 'item_name')} placeholder='Item Name' />
-          <input type='text' value={this.state.newItem.item_model} onChange={(event) => this.handleChange(event, 'item_model')} placeholder='Item Model' />
-          <input type='text' value={this.state.newItem.item_detail} onChange={(event) => this.handleChange(event, 'item_detail')} placeholder='Item Detail' />
-          <input type='text' value={this.state.newItem.item_location} onChange={(event) => this.handleChange(event, 'item_location')} placeholder='Item Location' />
-          <input type='text' value={this.state.newItem.item_image} onChange={(event) => this.handleChange(event, 'item_image')} placeholder='Item Image' />
-          <input type='text' value={this.state.newItem.item_price} onChange={(event) => this.handleChange(event, 'item_price')} placeholder='Item Price' />
-          <input type="submit" value="Add Item" />
+          <input type='text' value={this.state.newItem.item_name} onChange={this.handleChange} placeholder='Item Name' />
+          <input type='text' value={this.state.newItem.item_model} onChange={this.handleChange} placeholder='Item Model' />
+          <input type='text' value={this.state.newItem.item_detail} onChange={this.handleChange} placeholder='Item Detail' />
+          <input type='text' value={this.state.newItem.item_location} onChange={this.handleChange} placeholder='Item Location' />
+          <input type='text' value={this.state.newItem.item_image} onChange={this.handleChange} placeholder='Item Image' />
+          <input type='text' value={this.state.newItem.item_price} onChange={this.handleChange} placeholder='Item Price' />
+          <button type="submit">Submit Item</button>
         </form>
         </div>
         <div>
@@ -72,9 +67,6 @@ class InfoPage extends Component {
 
 }
 
-const mapReduxStateToProps = (reduxState) => ({
-  items: reduxState,
-});
 
 
-export default connect(mapReduxStateToProps)(InfoPage);
+export default connect()(InfoPage);
