@@ -4,22 +4,29 @@ import { connect } from 'react-redux';
 
 class CollectionPage extends Component {
 
-
-
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_ITEMS" });
   };
+
+  editItem = (id) => {
+    console.log('in Edit', id)
+    this.props.dispatch({
+      type: "EDIT_ITEM",
+      payload: id,
+    });
+  }
 
   removeItem = (id) => {
     console.log('In Delete', id)
     this.props.dispatch({
       type: "LOOSE_ITEMS",
-      payload: id,
+      payload: id
     });
   };
 
+
+
   render() {
-    console.log(this.props.id);
     return (
       <div className="container">
         <h1>Item Collection Page</h1>
@@ -32,6 +39,8 @@ class CollectionPage extends Component {
                   <img src={`/media/${item.item_image}`} />
                   <h3>{item.item_name}</h3>
                   <button onClick={() => this.removeItem(item.id)}>Delete</button>
+                  <button onClick={() => this.editItem(item.id)}>Add To For Sale List</button>
+                  <button onClick={() => this.editItem(item.id)}>Add To Wish List</button>
                 </li>
               </div>)
           })}
@@ -44,8 +53,5 @@ class CollectionPage extends Component {
 const mapReduxStateToProps = (reduxState) => ({
   items: reduxState.item,
 });
-
-
-
 
 export default connect(mapReduxStateToProps)(CollectionPage);
