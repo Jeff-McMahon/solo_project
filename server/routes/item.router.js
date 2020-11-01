@@ -61,10 +61,10 @@ router.post("/add", rejectUnauthenticated, (req, res) => {
   });
 
   router.put('/:id', rejectUnauthenticated, (req,res) => {
-    console.log(req.payload);
-    console.log('editing item', req.payload);
-    let queryText= `UPDATE "collections" SET "list_forsale" = 'false' WHERE "id" =$1`;
-    pool.query(queryText, [req.payload])
+    console.log(req.params.id);
+    console.log('editing item', req.params.id);
+    let queryText= `UPDATE "collections" SET "list_forsale" = 'true' WHERE "id" =$1`;
+    pool.query(queryText, [req.params.id])
     .then(result => {
       res.sendStatus(204);
     })
