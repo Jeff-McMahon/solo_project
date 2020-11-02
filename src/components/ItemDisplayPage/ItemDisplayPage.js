@@ -20,6 +20,9 @@ class ItemDisplayPage extends Component {
             <li>{item.item_model}</li>
             <li>{item.item_detail}</li>
             <li>{item.item_location}</li>
+            <button onClick={() => this.removeItem(item.id)}>Delete</button>
+            <button onClick={() => this.editItem(item.id)}>Add To For Sale List</button>
+            <button onClick={() => this.editItem(item.id)}>Add To Wish List</button>
             </div>
           })}
         </ul>

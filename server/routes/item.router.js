@@ -20,6 +20,28 @@ router.get("/", rejectUnauthenticated, (req, res) => {
     });
 });
 
+router.get("/forSale", (req,res) => {
+  const queryText = `SELECT * FROM "collections" WHERE "list_forsale" = 'true' ORDER BY "item_name" ASC`;
+  pool
+    .query(queryText)
+    .then((result) => res.send(result.rows))
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+  });
+
+  router.get("/wishList", (req,res) => {
+    const queryText = `SELECT * FROM "collections" WHERE "list_wish" = 'true' ORDER BY "item_name" ASC`;
+    pool
+      .query(queryText)
+      .then((result) => res.send(result.rows))
+      .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+    });
+
 // Router 2: Delete an item in the user's collection
 
 router.delete("/delete/:id", (req, res) => {

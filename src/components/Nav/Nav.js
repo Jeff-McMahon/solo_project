@@ -13,13 +13,13 @@ const Nav = (props) => {
 
   if (props.store.user.id != null) {
     loginLinkData.path = '/user';
-    loginLinkData.text = 'Home';
+    loginLinkData.text = 'Master Collection Page';
   }
 
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2 className="nav-title">The Collector</h2>
       </Link>
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>
@@ -41,8 +41,14 @@ const Nav = (props) => {
         <Link className="nav-link" to="/about">
           Item Detail Page
         </Link>
-      </div>
+        <Link className="nav-link" to="/forsale">
+          For Sale Page
+        </Link>
+        <Link className="nav-link" to="/wishlist">
+          Wish List Page
+        </Link>
     </div>
+    </div >
   );
 };
 

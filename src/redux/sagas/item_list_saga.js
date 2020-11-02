@@ -44,11 +44,35 @@ function* editSaga(action) {
   }
 }
 
+function* forSaleSaga(action) {
+  console.log('in forSaleSaga');
+  const response = yield Axios.get("item/forSale");
+  const actionToDispatch = {
+    type: "SET_ITEMS",
+    payload: response.data,
+  };
+  yield put(actionToDispatch);
+  console.log("after forSaleSaga", response.data);
+}
+
+function* wishListSaga() {
+  console.log('in wish list saga');
+  const response = yield Axios.get("item/wishList");
+  const actionToDispatch = {
+    type: "SET_ITEMS",
+    payload: response.data,
+  };
+  yield put(actionToDispatch);
+  console.log("after wishListSaga", response.data);
+}
+
 function* itemSaga() {
   yield takeLatest('FETCH_ITEMS', getItemListSaga);
   yield takeLatest('LOOSE_ITEMS', deleteSaga);
   yield takeLatest('ADD_ITEM', addSaga);
   yield takeLatest('EDIT_ITEM', editSaga);
+  yield takeLatest('FOR_SALE_ITEMS', forSaleSaga);
+  yield takeLatest('WISH_LIST_ITEMS', wishListSaga);
 }
 
 export default itemSaga;

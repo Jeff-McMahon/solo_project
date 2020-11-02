@@ -1,0 +1,18 @@
+body {
+    background: #DAAD86;
+}
+
+#headline {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    font-size: 60px;
+}
+
+#page_header {
+    padding: 30px;
+}
+
+#thumbnail {
+    box-sizing: border-box;
+    border: solid 3px black;
+}

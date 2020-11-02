@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './CollectionPage.css';
 
 
 class CollectionPage extends Component {
@@ -29,19 +30,19 @@ class CollectionPage extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Item Collection Page</h1>
+        <div id='page_header'>
+        <h1 id='headline'>Your Collection Page</h1>
+        </div>
         <ul>
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));
             return (
-              <div>
-                <li>
+              <div class="row" id='thumbnail'>
+                <div class="col-4">
                   <img src={`/media/${item.item_image}`} />
                   <h3>{item.item_name}</h3>
-                  <button onClick={() => this.removeItem(item.id)}>Delete</button>
-                  <button onClick={() => this.editItem(item.id)}>Add To For Sale List</button>
-                  <button onClick={() => this.editItem(item.id)}>Add To Wish List</button>
-                </li>
+                  <button>Details</button>
+                </div>
               </div>)
           })}
         </ul>
