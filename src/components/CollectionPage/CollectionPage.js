@@ -29,7 +29,7 @@ class CollectionPage extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <div id='page_header'>
         <h1 id='headline'>Your Collection Page</h1>
         </div>
@@ -37,14 +37,12 @@ class CollectionPage extends Component {
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));
             return (
-              <div class="row" id='thumbnail'>
-                <div class="col-4">
-                  <img src={`/media/${item.item_image}`} />
+                <div id='image_column'>
+                  <img id='image' src={`/media/${item.item_image}`} />
                   <h3>{item.item_name}</h3>
-                  <button>Details</button>
+                  <button id='details_button'>Details</button>
                 </div>
-              </div>)
-          })}
+          )})}
         </ul>
       </div>
     );
