@@ -5,27 +5,11 @@ import './CollectionPage.css';
 
 class CollectionPage extends Component {
 
+  // Upon loading, a get request selects all the items from the user's collection.
+
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_ITEMS" });
   };
-
-  editItem = (id) => {
-    console.log('in Edit', id)
-    this.props.dispatch({
-      type: "EDIT_ITEM",
-      payload: id,
-    });
-  }
-
-  removeItem = (id) => {
-    console.log('In Delete', id)
-    this.props.dispatch({
-      type: "LOOSE_ITEMS",
-      payload: id
-    });
-  };
-
-
 
   render() {
     return (

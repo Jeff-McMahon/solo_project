@@ -1,0 +1,15 @@
+
+
+#image {
+    height: 90%;
+    width: 75%%;
+    border: 5px solid #BC986A;
+}
+
+#image_column {
+    display: inline-block;
+    width: 33%;
+    height: 300px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
