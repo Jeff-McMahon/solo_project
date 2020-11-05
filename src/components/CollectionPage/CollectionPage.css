@@ -1,6 +1,10 @@
 body {
-    background: #DAAD86;
+    background-color: #BC986A;
     text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
 }
 
 #details_button {

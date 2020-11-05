@@ -1,15 +1,20 @@
 
 
 #image {
-    height: 90%;
-    width: 75%%;
+    height: 70%;
+    width: 75%;
     border: 5px solid #BC986A;
+    border-radius: 25px;
 }
 
 #image_column {
-    display: inline-block;
-    width: 33%;
+    width: 40%;
     height: 300px;
     padding: 10px;
     margin-bottom: 25px;
+}
+
+#individualitem {
+    height: 400px;
+    width: 50%;
 }

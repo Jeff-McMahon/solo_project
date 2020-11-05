@@ -30,21 +30,32 @@ class ItemDisplayPage extends Component {
     console.log(this.props);
     return (
       <div className="container">
+        <div><h1>Item Detail Page</h1></div>
         <ul>
           {this.props.items.map((item) => {
             console.log('current item is', item);
-            return <div id="image_column"><img id='image' src={`/media/${item.item_image}`} />
-            <li>Item Name:  {item.item_name}</li>
-            <li>Model Number:  {item.item_model}</li>
-            <li>Notable Details:  {item.item_detail}</li>
-            <li>Location:   {item.item_location}</li>
-            <button onClick={() => this.removeItem(item.id)}>Delete</button>
-            <button onClick={() => this.editItem(item.id)}>Add To For Sale List</button>
-            <button onClick={() => this.editItem(item.id)}>Add To Wish List</button>
-            </div>
-          })}
+            return (
+              <>
+                  <div id='thebox'>
+                    <div id='individualitem'>
+                      <div><img id='image' src={`/media/${item.item_image}`} /></div>
+                      <div>
+                      <li>Item Name:  {item.item_name}</li>
+                      <li>Model Number:  {item.item_model}</li>
+                      <li>Notable Details:  {item.item_detail}</li>
+                      <li>Location:   {item.item_location}</li>
+                      <li>Listed on the For Sale Page:  {item.list_forsale}</li>
+                      <li>Listed on the Wish List Page: {item.list_wishlist}</li>
+                      <li><button onClick={() => this.removeItem(item.id)}>Delete</button></li>
+                      <li><button onClick={() => this.editItem(item.id)}>Add To For Sale List</button></li>
+                      <li><button onClick={() => this.editItem(item.id)}>Add To Wish List</button></li>
+                      </div>
+                    </div>
+                  </div>
+            </>
+            )})}
         </ul>
-      </div>
+      </div >
     );
   }
 }

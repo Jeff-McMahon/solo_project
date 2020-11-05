@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './CollectionPage.css';
 
 
+
 class CollectionPage extends Component {
 
   // Upon loading, a get request selects all the items from the user's collection.
