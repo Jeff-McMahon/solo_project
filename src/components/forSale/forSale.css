@@ -1,0 +1,24 @@
+#headline {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    font-size: 60px;
+    text-align: center;
+}
+
+#fs_image {
+    height: 300px;
+    width: 200px;
+    border: 10px solid #659dbd;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+#fs_image_column {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+}
+
+#page_header {
+    padding: 30px;
+}

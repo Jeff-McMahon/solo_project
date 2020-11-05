@@ -25,7 +25,6 @@ class CollectionPage extends Component {
                 <div id='image_column'>
                   <img id='image' src={`/media/${item.item_image}`} />
                   <h3>{item.item_name}</h3>
-                  <button id='details_button'>Details</button>
                 </div>
           )})}
         </ul>
