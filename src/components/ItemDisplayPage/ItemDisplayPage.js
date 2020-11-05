@@ -26,30 +26,40 @@ class ItemDisplayPage extends Component {
   };
 
 
+
   render() {
     console.log(this.props);
+    let forSale = 'No';
+    let wishList = 'No';
     return (
       <div className="container">
         <div><h1>Item Detail Page</h1></div>
         <ul>
           {this.props.items.map((item) => {
-            console.log('current item is', item);
+            if (item.list_forsale === true) {
+              forSale = 'Yes'
+            }
+            if (item.list_wish === true) {
+              wishList = 'Yes'
+            }
+            console.log('current item is', "item");
             return (
               <>
                   <div id='thebox'>
                     <div id='individualitem'>
-                      <div><img id='image' src={`/media/${item.item_image}`} /></div>
-                      <div>
+                      <img id='image' src={`/media/${item.item_image}`} />
+                    </div>
+                    <div id='itemdetails'>
                       <li>Item Name:  {item.item_name}</li>
                       <li>Model Number:  {item.item_model}</li>
                       <li>Notable Details:  {item.item_detail}</li>
                       <li>Location:   {item.item_location}</li>
-                      <li>Listed on the For Sale Page:  {item.list_forsale}</li>
-                      <li>Listed on the Wish List Page: {item.list_wishlist}</li>
-                      <li><button onClick={() => this.removeItem(item.id)}>Delete</button></li>
-                      <li><button onClick={() => this.editItem(item.id)}>Add To For Sale List</button></li>
-                      <li><button onClick={() => this.editItem(item.id)}>Add To Wish List</button></li>
-                      </div>
+                      <li>Price: ${item.item_price}</li>
+                      <li>Listed on the For Sale Page:  {forSale}</li>
+                      <li>Listed on the Wish List Page: {wishList}</li>
+                      <li><button id='deletebutton' onClick={() => this.removeItem(item.id)}>Delete</button></li>
+                      <li><button id='forSaleButton' onClick={() => this.editItem(item.id)}>Add To For Sale List</button></li>
+                      <li><button id='wishListButton' onClick={() => this.editItem(item.id)}>Add To Wish List</button></li>
                     </div>
                   </div>
             </>
