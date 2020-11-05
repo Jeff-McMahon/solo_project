@@ -1,5 +1,9 @@
 footer {
-  margin-top: 80px;
+  font-family: 'Itim', cursive;
+  font-size: xx-large;
+  margin-top: 60px;
+  margin-bottom: 80px;
   padding: 20px;
   text-align: center;
+  color: white;
 }

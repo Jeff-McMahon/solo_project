@@ -1,0 +1,13 @@
+
+#registerbutton {
+    background-color: #BC986A;
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+}
+#registerbox {
+    background-color: #659dbd;
+    border: 5px solid #BC986A; 
+    color: white;
+    font-family: 'Itim', cursive;
+    border-radius: 25px;
+}
