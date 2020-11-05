@@ -18,56 +18,47 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
+      <>
+      <div id='landingpage' className="container">
+        <h2 id='headline'>Welcome to The Collector!</h2>
+      </div>
 
         <div className="grid">
-          <div className="grid-col grid-col_8">
+          <div className="grid-col grid-col_8" id='textarea'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra
-              lacus ut ex molestie blandit. Etiam et turpis sit amet risus
-              mollis interdum. Suspendisse et justo vitae metus bibendum
-              fringilla sed sed justo. Aliquam sollicitudin dapibus lectus,
-              vitae consequat odio elementum eget. Praesent efficitur eros vitae
-              nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac
-              dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum
-              fringilla nibh a luctus. Duis a sapien metus.
+              Any collector will tell you that searching for new items for your collection
+              is the fun part of collecting. Organizing you collection, archiving the item's
+              location and remembering where you put it is a little more... well... boring.
+              
             </p>
 
             <p>
-              Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-              id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-              consectetur placerat pharetra. Aenean gravida ex ut erat commodo,
-              ut finibus metus facilisis. Nullam eget lectus non urna rhoncus
-              accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-              euismod, augue at condimentum rhoncus, massa lorem semper lacus,
-              sed lobortis augue mi vel felis. Duis ultrices sapien at est
-              convallis congue.
+              Enter 'The Collector'! Designed to let you spend more time collecting and less
+              time with the mundane tasks of organizing and cataloging your collection. '
+              The Collector' is your on-line answer to the question of "Where did I put that?".
+              Plus, with the added functionality of the 'For Sale' and 'Wish List', you can 
+              advertise what you'd like to sell or wish to buy online!
             </p>
 
             <p>
-              Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-              Suspendisse posuere dapibus maximus. Aliquam vitae felis libero.
-              In vehicula sapien at semper ultrices. Vivamus sed feugiat libero.
-              Sed sagittis neque id diam euismod, ut egestas felis ultricies.
-              Nullam non fermentum mauris. Sed in enim ac turpis faucibus
-              pretium in sit amet nisi.
+              Your collection is only visible to you, locked behind a password protected
+              firewall. The location of all your items will never be shared with anyone. 
+              Please, take a moment to register an account and enjoy 'The Collector'!
             </p>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />
 
             <center>
-              <h4>Already a Member?</h4>
-              <button className="btn btn_sizeSm" onClick={this.onLogin}>
+              <h4 id='memberheadline'>Already a Member?</h4>
+              <button id='loginbutton' className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
               </button>
             </center>
           </div>
         </div>
-      </div>
-    );
+        </>
+      );
   }
 }
 

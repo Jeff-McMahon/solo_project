@@ -11,7 +11,7 @@ class wishList extends Component {
   render() {
     return (
       <div className="container">
-        <h1>For Sale Page</h1>
+        <h1>Wish List</h1>
         <ul>
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));

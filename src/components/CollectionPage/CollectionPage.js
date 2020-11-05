@@ -3,33 +3,18 @@ import { connect } from 'react-redux';
 import './CollectionPage.css';
 
 
+
 class CollectionPage extends Component {
+
+  // Upon loading, a get request selects all the items from the user's collection.
 
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_ITEMS" });
   };
 
-  editItem = (id) => {
-    console.log('in Edit', id)
-    this.props.dispatch({
-      type: "EDIT_ITEM",
-      payload: id,
-    });
-  }
-
-  removeItem = (id) => {
-    console.log('In Delete', id)
-    this.props.dispatch({
-      type: "LOOSE_ITEMS",
-      payload: id
-    });
-  };
-
-
-
   render() {
     return (
-      <div className="container">
+      <div>
         <div id='page_header'>
         <h1 id='headline'>Your Collection Page</h1>
         </div>
@@ -37,14 +22,12 @@ class CollectionPage extends Component {
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));
             return (
-              <div class="row" id='thumbnail'>
-                <div class="col-4">
-                  <img src={`/media/${item.item_image}`} />
+                <div id='image_column'>
+                  <img id='image' src={`/media/${item.item_image}`} />
                   <h3>{item.item_name}</h3>
-                  <button>Details</button>
+                  <button id='details_button'>Details</button>
                 </div>
-              </div>)
-          })}
+          )})}
         </ul>
       </div>
     );

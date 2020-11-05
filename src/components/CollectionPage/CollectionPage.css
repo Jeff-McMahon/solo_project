@@ -1,18 +1,41 @@
 body {
-    background: #DAAD86;
+    background-color: #BC986A;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
 }
 
+#details_button {
+    background-color: #659dbd;
+    color: #f2f2f2
+
+}
 #headline {
     font-family: 'Itim', cursive;
     text-align: center;
     font-size: 60px;
+    text-align: center;
+}
+
+#image {
+    height: 90%;
+    width: 50%;
+    border: 10px solid #659dbd;
+}
+
+#image_column {
+    display: inline-block;
+    width: 25%;
+    height: 300px;
+    padding: 10px;
+    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 #page_header {
     padding: 30px;
 }
 
-#thumbnail {
-    box-sizing: border-box;
-    border: solid 3px black;
-}
+
