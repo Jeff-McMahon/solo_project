@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom right, rgb(188, 152, 106, 1), rgb(101, 122, 189));
     text-align: center;
+    background-size: cover;
 }
 
 #details_button {
