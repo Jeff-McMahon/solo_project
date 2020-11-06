@@ -19,8 +19,8 @@ class forSalePage extends Component {
             return (
               <div id='fs_image_column'>
                   <img id='fs_image' src={`/media/${item.item_image}`} />
-                  <h3>{item.item_name}</h3>
-                  <h3>${item.item_price}</h3>
+                  <h3 id='fs_lineitem' >{item.item_name}</h3>
+                  <h3 id='fs_lineitem'>${item.item_price}</h3>
               </div>)
           })}
       </div>

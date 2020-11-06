@@ -1,0 +1,41 @@
+
+#wl_page_header {
+    padding: 30px;
+}
+
+
+#wl_headline {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    font-size: xx/xx-large;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#wl_image {
+    height: 300px;
+    width: 200px;
+    border: 10px solid #659dbd;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+#wl_image_column {
+    column-count: 4;
+    padding-bottom: 15px;
+    display: inline-block;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+
+
+#wl_lineitem {
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+#wl_ul {
+    list-style-type: none;
+}

@@ -55,8 +55,6 @@ class ItemDisplayPage extends Component {
                       <li>Notable Details:  {item.item_detail}</li>
                       <li>Location:   {item.item_location}</li>
                       <li>Price: ${item.item_price}</li>
-                      <li>Listed on the For Sale Page:  {forSale}</li>
-                      <li>Listed on the Wish List Page: {wishList}</li>
                       <li><button id='deletebutton' onClick={() => this.removeItem(item.id)}>Delete</button></li>
                       <li><button id='forSaleButton' onClick={() => this.editItem(item.id)}>Add To For Sale List</button></li>
                       <li><button id='wishListButton' onClick={() => this.editItem(item.id)}>Add To Wish List</button></li>
