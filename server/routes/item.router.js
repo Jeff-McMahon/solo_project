@@ -2,11 +2,10 @@ const express = require("express");
 const { rejectUnauthenticated } = require("../modules/authentication-middleware");
 const pool = require("../modules/pool");
 const router = express.Router();
-// Step #1: Copied template into new folder 'item.router.js'
 
 
-// Router 1: display entire collection of user
-// Router works through Postman - 10.27 1540
+
+  // Router 1: display entire collection of user
 
 router.get("/", rejectUnauthenticated, (req, res) => {
   console.log(req.user.id)
@@ -20,6 +19,9 @@ router.get("/", rejectUnauthenticated, (req, res) => {
     });
 });
 
+  // Router 2: display the for sale list
+  // GET route: '/forSale'
+
 router.get("/forSale", (req,res) => {
   const queryText = `SELECT * FROM "collections" WHERE "list_forsale" = 'true' ORDER BY "item_name" ASC`;
   pool
@@ -30,6 +32,9 @@ router.get("/forSale", (req,res) => {
       res.sendStatus(500);
     });
   });
+
+  // Router 3: display the wish list
+  // GET route: '/wishlist'
 
   router.get("/wishList", (req,res) => {
     const queryText = `SELECT * FROM "collections" WHERE "list_wish" = 'true' ORDER BY "item_name" ASC`;
@@ -42,7 +47,8 @@ router.get("/forSale", (req,res) => {
       });
     });
 
-// Router 2: Delete an item in the user's collection
+  // Router 4: Delete an item in the user's collection
+  // DELETE '/delete/:id'
 
 router.delete("/delete/:id", (req, res) => {
   console.log(req);
@@ -59,8 +65,9 @@ router.delete("/delete/:id", (req, res) => {
     });
 });
 
-// Router #3: Adding an item to the user's collection
+// Router 5: Adding an item to the user's collection
 // POST '/item/add'
+
 router.post("/add", rejectUnauthenticated, (req, res) => {
     console.log('in Insert router', req.body)
     // TODO: Pull your values out of req.body

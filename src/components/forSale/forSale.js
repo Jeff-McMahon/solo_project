@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './forSale.css';
+
 
 
 class forSalePage extends Component {
@@ -10,20 +12,17 @@ class forSalePage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>For Sale Page</h1>
-        <ul>
+      <div id='page_header' className="container">
+        <h1 id='headline'>For Sale Page</h1>
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));
             return (
-              <div>
-                <li>
-                  <img src={`/media/${item.item_image}`} />
-                  <h3>{item.item_name}</h3>
-                </li>
+              <div id='fs_image_column'>
+                  <img id='fs_image' src={`/media/${item.item_image}`} />
+                  <h3 id='fs_lineitem' >{item.item_name}</h3>
+                  <h3 id='fs_lineitem'>${item.item_price}</h3>
               </div>)
           })}
-        </ul>
       </div>
     );
   }
