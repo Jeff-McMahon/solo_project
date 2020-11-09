@@ -13,28 +13,36 @@ class wishList extends Component {
   render() {
     return (
       <>
-        <div id='wl_page_header'>
-          <h1 id='wl_headline'>Wish List</h1>
-        </div>
+        <h1 id='wl_headline'>Wish List</h1>
         <div>
-          <ul id='wl_ul'>
-            {this.props.items.map((item) => {
-              console.log('current item is', (item.id));
-              return (
+
+          {this.props.items.map((item) => {
+            console.log('current item is', (item.id));
+            return (
+              <>
                 <div id='wl_image_column'>
-                  <li id='wl_item'>
-                    <div>
-                    <img id='wl_image' src={`/media/${item.item_image}`} />
-                    <h3 id='wl_lineitem'>{item.item_name}</h3>
-                    <h3>{item.item_detail}</h3>
-                    </div>
-                  </li>
-                </div>)})}
-          </ul>
+                  <img id='wl_image' src={`/media/${item.item_image}`} />
+                  <table id='wl_table'>
+                    <tr>
+                      <th id='wl_table_name'>Item Name:</th><td id='wl_lineitem' >{item.item_name}</td>
+                    </tr>
+                    <tr>
+                      <th id='wl_table_name'>Notable Details: </th><td id='wl_lineitem'>{item.item_detail}</td>
+                    </tr>
+                    <tr>
+                      <th id='wl_table_name'>Please Contact:</th><td id='wl_lineitem'>{item.item_owner}</td>
+                    </tr>
+                  </table>
+                </div>
+              </>
+            );
+          })}
         </div>
-      </>)
+      </>
+    )
   }
 }
+
 
 const mapReduxStateToProps = (reduxState) => ({
   items: reduxState.item,

@@ -26,11 +26,18 @@ body {
 
 #image_column {
     display: inline-block;
-    width: 25%;
+    width: 20%;
     height: 300px;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 60px;
     margin-top: 60px;
+}
+
+#master_text {
+    font-family: 'Itim', cursive;
+    text-align: center;
+    color: white; 
+    text-shadow: 1px, 1px, black;
 }
 
 #page_header {

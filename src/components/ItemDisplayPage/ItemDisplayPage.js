@@ -33,15 +33,9 @@ class ItemDisplayPage extends Component {
     let wishList = 'No';
     return (
       <div className="container">
-        <div><h1>Item Detail Page</h1></div>
+        <div><h1 id='item_detail_headline'>Item Detail Page</h1></div>
         <ul>
           {this.props.items.map((item) => {
-            if (item.list_forsale === true) {
-              forSale = 'Yes'
-            }
-            if (item.list_wish === true) {
-              wishList = 'Yes'
-            }
             console.log('current item is', "item");
             return (
               <>
