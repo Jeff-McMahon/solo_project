@@ -1,6 +1,6 @@
 
 # "The Collector" Project
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+Any collector knows it's more fun to build your collection than it is to organize and archive it. That's why so many collectors have boxes full of items, but can never seem to find what they need. The Collector aims to solve that problem. This easy to use software aims to assist any collector in keeping their collection organized. 
 
 
 ## Prerequisites

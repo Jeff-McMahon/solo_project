@@ -27,7 +27,7 @@ class LandingPage extends Component {
           <div className="grid-col grid-col_8" id='textarea'>
             <p>
               Any collector will tell you that searching for new items for your collection
-              is the fun part of collecting. Organizing you collection, archiving the item's
+              is the fun part of collecting. Organizing your collection, archiving the item's
               location and remembering where you put it is a little more... well... boring.
               
             </p>
