@@ -1,12 +1,21 @@
+
+/* columnIDP used to organize the 3 columns of each item */
+#columnIDP {
+    max-height: 700px;
+    max-width: 600px;
+}
+
+/* Delete button */
 #deletebutton {
     background-color: #bd657a;
     color: white;
     text-shadow: 2px 2px black;
     border-radius: 15px;
     margin-bottom: 10px;
-    margin-top: 15px;
+    margin-top: 100px;
 }
 
+/* For Sale button */
 #forSaleButton {
     background-color: #65bda8;
     color: white;
@@ -15,39 +24,33 @@
     margin-bottom: 10px;;
 }
 
+/* Left half of the item detail table */
 #heading {
-    color: #bd65a6;
+    font-family: 'Itim', cursive;
+    font-size: x-large;
+    color: whitesmoke;
+    text-shadow: 2px 2px #bd65a6;
+    text-align: left;
+
 }
 
+/* Right half of the item detail table */
+#heading2 {
+    font-family: 'Itim', cursive;
+    font-size: large;
+    color: white;
+    Text-align: right;   
+}
+
+/* Image format */
 #imageIDP {
     border: 5px solid #BC986A;
     border-radius: 25px;
-    height: 75%;
-    width:75%;
+    max-height: 75%;
+    max-width: 75%;
 }
 
-#image_column {
-    width: 40%;
-    height: 300px;
-    padding: 10px;
-    margin-bottom: 25px;
-}
-
-#individualitem {
-    height: 400px;
-    column-width: 60%;
-}
-
-#itemdetails {
-    font-family: 'Itim', cursive;
-    text-align: left;
-    color: white; 
-    text-shadow: 1px 1px black;
-    font-size: xx-large;
-    list-style-type: none;
-
-}
-
+/* Heading CSS */
 #item_detail_headline {
     font-family: 'Itim', cursive;
     text-align: center;
@@ -57,17 +60,19 @@
     font-size: 60px;
 }
 
-#itemtable {
-    margin-bottom: 15px;
+/* Details table formatting */
+#itemTable {
+    max-height: 100%;
 }
 
+/* Individual container formatting */
 #thebox {
     column-count: 3;
     margin-bottom: 15px;
-
-
+    max-height: 375px;
 }
 
+/* Wish list button */
 #wishListButton {
     background-color: #bd65a6;
     color: white;
