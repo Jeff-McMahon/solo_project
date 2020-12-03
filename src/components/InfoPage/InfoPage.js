@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './infoPage.css';
+
 
 class InfoPage extends Component {
 
@@ -41,7 +43,7 @@ class InfoPage extends Component {
     return (
       <>
         <div>
-          <p>New item page! Please enter in a new item to your collection.</p>
+          <p id='headline' >New item page! Please enter a new item to your collection.</p>
         </div>
         <div><form onSubmit={this.handleSubmit}>
           <input name='item_name' type='text' value={this.state.item_name} onChange={this.handleChange} placeholder='Item Name' />
@@ -50,7 +52,7 @@ class InfoPage extends Component {
           <input name='item_location' type='text' value={this.state.item_location} onChange={this.handleChange} placeholder='Item Location' />
           <input name='item_image' type='text' value={this.state.item_image} onChange={this.handleChange} placeholder='Item Image' />
           <input name='item_price' type='text' value={this.state.item_price} onChange={this.handleChange} placeholder='Item Price' />
-          <button type="submit">Submit Item</button>
+          <button type="submit" id='submitButton'>Submit Item</button>
         </form>
         </div>
         <div>

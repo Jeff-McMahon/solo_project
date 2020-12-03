@@ -14,12 +14,10 @@ class wishList extends Component {
     return (
       <>
         <h1 id='wl_headline'>Wish List</h1>
-        <div>
-
           {this.props.items.map((item) => {
             console.log('current item is', (item.id));
             return (
-              <>
+              
                 <div id='wl_image_column'>
                   <img id='wl_image' src={`/media/${item.item_image}`} />
                   <table id='wl_table'>
@@ -34,10 +32,9 @@ class wishList extends Component {
                     </tr>
                   </table>
                 </div>
-              </>
+              
             );
           })}
-        </div>
       </>
     )
   }

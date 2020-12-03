@@ -1,0 +1,12 @@
+
+
+#headline {
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: 2px black;
+}
+
+#submitButton {
+    background-color: firebrick;
+    color: white;
+}
